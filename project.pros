@@ -1,7 +1,7 @@
 {
     "py/object": "pros.conductor.project.Project",
     "py/state": {
-        "project_name": "PSU-VEXU-Unified",
+        "project_name": "Hard-Copy",
         "target": "v5",
         "templates": {
             "kernel": {
