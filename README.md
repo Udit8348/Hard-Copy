@@ -72,14 +72,3 @@ Official PSU VEX-U Source Code\
 Vex Forum
 ### License
 Pending ⏳
-
-
-<object data="docs/PROJECT_TITLE.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="docs/PROJECT_TITLE.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="docs/PROJECT_TITLE.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
-
-https://docs.google.com/viewer?url=https://docs.google.com/x/yyyy/document/z/nvjsinmsdfjnlsnlkkn-hslknl1_V7sc/export?format=pdf
-
-https://drive.google.com/file/d/1ElM9kUIaDDdXaQUwSKpjZQNhfUceY4-I/view?usp=sharing
