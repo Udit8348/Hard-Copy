@@ -8,6 +8,40 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 ## Practicality
 - Print your code!
 ## Installation Guide
+*Draft*
+**Note these are just ripped comments being used as boiler plate**
+- !/usr/bin/env python3
+- Directions:
+- Add this file to the main directory of the project
+- Open terminal to the directoy containing this script
+- use the following cmd to create the .tex file
+- python3 prosToMinted.py (@param: "name of a directory where main.tex will be created")
+- open this directory from finder and open main.tex (Requires LaTex and another package)
+- use typeset to generate the tex file
+- print and change target to save as PDF
+- Done!
+
+The first recursive is false and the second is true?? Try a different directory if the one you choose doesn't work
+ignore the errno 17 in the terminal
+
+- import shutil #this just means that we need to say shutil before all the modules
+- instead we can just import the two needed modules relative to shutil
+- this means that we do not need to prefix it with shutil.*
+- the interpreter will actually not let you use the prefix anyway
+
+- the default breakpoints are set to anywhere so everything is preserved
+- if there is a specific case that needs to be formatted differently
+- you can manually set the break point in the tex file
+- reference the minted user guide pdf
+
+- delete tex folder once we have a zip copy of it
+
+- make rule for converting the relevant source code to a tex file
+- recipie runs a python file with a dedicated directory for all of the tex components
+- expected behavior: create tex.zip in ./docs
+- tex.zip should be uploaded to overleaf where it can easily be compiled into a pdf
+*Draft*
+
 
 # Contribute 💻
 Read Below and see how you can help contribute! Remember this is an open source project and I appreciate any feedback or help.

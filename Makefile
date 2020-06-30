@@ -1,20 +1,12 @@
 ################################################################################
 ######################### User configurable parameters #########################
 
-# This whole group of code is called a rule
-# Include builddocs phony target with any pre-requisites (file that is used to create the target)
-# then specify recipie which should be indented by a tab (or a specified RECIPIEPREFIX)
+# Make File Rule for Converting Code to Tex
 SCRPTDIR=./scripts
 DOCSDIR = ./docs
-builddocs: include/psu/constants.h
-	python3 $(SCRPTDIR)/generic_parse_key_bindings.py
-
-# make rule for converting the relevant source code to a tex file
-# recipie runs a python file with a dedicated directory for all of the tex components
-# expected behavior: create tex.zip in ./docs
-# tex.zip should be uploaded to overleaf where it can easily be compiled into a pdf
-convsrc: $(SCRPTDIR)/prosToMinted.py
+conv2tex: $(SCRPTDIR)/prosToMinted.py
 	python3 $(SCRPTDIR)/prosToMinted.py $(DOCSDIR)/Tex
+
 # filename extensions
 CEXTS:=c
 ASMEXTS:=s S

@@ -90,11 +90,3 @@ void opcontrol() {
 		pros::delay(20);
 	}
 }
-
-
-/*
-* Project Intent: https://discordapp.com/channels/197777408198180864/198658294007463936/727259258214809701
-* f.write("\\inputminted[linenos,tabsize=2,breaklines]{c}{" + source + "}\n")
-* f.write("\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage[margin=1in]{geometry}\n\\title{PSU Unified Source Code}\n\\author{subramanyau}\n\\date{June 2020}\n\\usepackage{minted}\n\\begin{document}\n\\input{codeToLaTeX.tex}\n\n\\end{document}")
-* https://linuxize.com/post/python-delete-files-and-directories/#:~:text=strerror))-,Deleting%20Directories%20(Folders),an%20empty%20directory%20and%20shutil.
-*/

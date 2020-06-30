@@ -1,25 +1,8 @@
-#!/usr/bin/env python3
-# Directions:
-# Add this file to the main directory of the project
-# Open terminal to the directoy containing this script
-# use the following cmd to create the .tex file
-# python3 prosToMinted.py (@param: "name of a directory where main.tex will be created")
-# open this directory from finder and open main.tex (Requires LaTex and another package)
-# use typeset to generate the tex file
-# print and change target to save as PDF
-# Done!
-
-#The first recursive is false and the second is true?? Try a different directory if the one you choose doesn't work
-#ignore the errno 17 in the terminal
 import os
 import sys
 import glob
 import zipfile
 from shutil import copy, rmtree
-#import shutil #this just means that we need to say shutil before all the modules
-# instead we can just import the two needed modules relative to shutil
-# this means that we do not need to prefix it with shutil.*
-# the interpreter will actually not let you use the prefix anyway
 
 # function that zips a selected directory
 def zipdir(path, ziph):
@@ -47,10 +30,6 @@ def main(dest):
             if "api.h" in header or "/display/" in header or "/Eigen/" in header or "/okapi/" in header or "/pros/" in header:
                 continue
             f.write("\\subsection{" + header + "}\n")
-            # the default breakpoints are set to anywhere so everything is preserved
-            # if there is a specific case that needs to be formatted differently
-            # you can manually set the break point in the tex file
-            # reference the minted user guide pdf
             f.write("\\inputminted[linenos,tabsize=2,breaklines, breakanywhere]{c}{" + header + "}\n")
             f.write("\\pagebreak\n\n")
             head, tail = os.path.split(header)
@@ -95,8 +74,7 @@ def main(dest):
     zipdir(dest, zipf)
     zipf.close()
 
-    # delete tex folder once we have a zip copy of it
-    # https://linuxize.com/post/python-delete-files-and-directories/#:~:text=strerror))-,Deleting%20Directories%20(Folders),an%20empty%20directory%20and%20shutil.
+
     try:
         rmtree(dest) #removes folder and all contained items
     except OSError as e:
