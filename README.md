@@ -61,9 +61,9 @@ At first thought, printing code may seem unnecessary when you can readily view i
 - https://www.overleaf.com/learn/latex/Free_online_introduction_to_LaTeX_(part_1)
 
 ### Objectives
-#### promote project organization by using specific folders
-#### promote simplicity by automating as much as possible
-#### promote entry for novices but allow growth for experts
+- promote project organization by using specific folders
+- promote simplicity by automating as much as possible
+- provide accessibility for novices but allow growth for experts
 
 ### As Seen On
 Official PSU VEX-U Source Code\
