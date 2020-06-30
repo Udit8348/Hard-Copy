@@ -5,6 +5,8 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 ## Features
 - Convert the relevant header and source code from your PROS project into a syntax highlighted PDF
 - Command Line Access
+- Will work with nested folders
+- Flexibility to work with a variety of code bases
 ## Practicality
 - Print your code!
 ## Installation Guide
@@ -13,7 +15,7 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 - !/usr/bin/env python3
 - Directions:
 - Add this file to the main directory of the project
-- Open terminal to the directoy containing this script
+- Open terminal to the directory containing this script
 - use the following cmd to create the .tex file
 - python3 prosToMinted.py (@param: "name of a directory where main.tex will be created")
 - open this directory from finder and open main.tex (Requires LaTex and another package)
@@ -70,3 +72,10 @@ Official PSU VEX-U Source Code\
 Vex Forum
 ### License
 Pending ⏳
+
+
+<object data="docs/PROJECT_TITLE.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="docs/PROJECT_TITLE.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="docs/PROJECT_TITLE.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
