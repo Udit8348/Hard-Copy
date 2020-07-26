@@ -14,6 +14,9 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 - navigate to docs/Tex.zip
 - tex.zip should be uploaded to overleaf where it can easily be compiled into a pdf
 
+## Project Output
+![Complete](https://github.com/Udit8348/EE_Source_Code/blob/master/Screen_Captures/test_complete.png)
+
 ## Compatibility
 Tested and working on PROS Kernel 3.2.1 and Okapi Lib 4.0.3 using python 3.7.7 on macOS 10.15.5
 ## Future Plans
@@ -38,3 +41,5 @@ Official PSU VEX-U Source Code\
 Vex Forum
 ### License
 Pending ⏳
+
+
