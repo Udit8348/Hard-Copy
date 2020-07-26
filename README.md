@@ -15,7 +15,10 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 - tex.zip should be uploaded to overleaf where it can easily be compiled into a pdf
 
 ## Project Output
-![Complete](https://github.com/Udit8348/EE_Source_Code/blob/master/Screen_Captures/test_complete.png)
+![page1](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE-0.jpeg)
+![page2](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE%202-1.jpeg)
+![page3](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE%203-2.jpeg)
+![page4](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE%204-3.jpeg)
 
 ## Compatibility
 Tested and working on PROS Kernel 3.2.1 and Okapi Lib 4.0.3 using python 3.7.7 on macOS 10.15.5
