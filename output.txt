@@ -1,0 +1,175 @@
+/Users/imacudit/Documents/Robotics/Community/Hard-Copy
+Cleaning project
+Creating cold package with libc,libm,libpros,okapilib [OK]
+Stripping cold package  [DONE]
+Section sizes:
+   text	   data	    bss	  total	    hex	filename
+1633627	   4427	49930016	51568070	312ddc6	bin/cold.package.elf
+Compiled src/main.cpp [OK]
+Adding timestamp [OK]
+Linking hot project with ./bin/cold.package.elf and libc,libm,libpros,okapilib [OK]
+Section sizes:
+   text	   data	    bss	  total	    hex	filename
+   1152	      4	      2	   1158	    486	bin/hot.package.elf
+Creating cold package binary for VEX EDR V5 [DONE]
+Creating bin/hot.package.bin for VEX EDR V5 [DONE]
+Capturing metadata for PROS Editor...
+redirect test
+udit
+this is very cool
+Cleaning project
+Creating cold package with libc,libm,libpros,okapilib [OK]
+Stripping cold package  [DONE]
+Section sizes:
+   text	   data	    bss	  total	    hex	filename
+1633627	   4427	49930016	51568070	312ddc6	bin/cold.package.elf
+Compiled src/main.cpp [OK]
+Adding timestamp [OK]
+Linking hot project with ./bin/cold.package.elf and libc,libm,libpros,okapilib [OK]
+Section sizes:
+   text	   data	    bss	  total	    hex	filename
+   1152	      4	      2	   1158	    486	bin/hot.package.elf
+Creating cold package binary for VEX EDR V5 [DONE]
+Creating bin/hot.package.bin for VEX EDR V5 [DONE]
+Capturing metadata for PROS Editor...
+ERROR - pros.cli.common:resolve_v5_port - No v5 ports were found! If you think you have a v5 plugged in, run this command again with the --debug flag
+
+
+newline?
+
+
+two new lines more
+2
+
+I am redirecting the terminal output to this file
+* [31m9315c6b[m -[33m (HEAD -> master, origin/master)[m remove pdf embedding [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31m73f6cff[m -[33m[m Embedded Objects are not allowed in GitHub readmes [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31ma7f38e9[m -[33m[m add pdf images [32m(4 weeks ago) [1;34m<Udit Subramanya>[m
+* [31m7fe178f[m -[33m[m add sample pdf and viewer to readme [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31md5b441f[m -[33m[m extensive comments and added success msg [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31m444304f[m -[33m[m formatting [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31m90b3d23[m -[33m[m add mjr hdng for resources and objectives [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31m643e058[m -[33m[m rebuild project [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31m214e4e7[m -[33m[m remove team PSU specifics [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31m4a86daf[m -[33m[m fixed typos [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31md4be4ad[m -[33m[m renamed project [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31me6a6e02[m -[33m[m Update project.pros [32m(4 weeks ago) [1;34m<Udit S>[m
+* [31m47a7014[m -[33m[m emojis [32m(4 weeks ago) [1;34m<Udit Subramanya>[m
+* [31mb0a5d10[m -[33m[m formatting checkboxes and line breaks [32m(4 weeks ago) [1;34m<Udit Subramanya>[m
+* [31mace6af7[m -[33m[m fixed check boxes and explained contributions [32m(4 weeks ago) [1;34m<Udit Subramanya>[m
+* [31mf47b47c[m -[33m[m content for major headings [32m(4 weeks ago) [1;34m<Udit Subramanya>[m
+* [31ma465ef3[m -[33m[m Added Major Headings [32m(4 weeks ago) [1;34m<Udit Subramanya>[m
+* [31m0f1743c[m -[33m[m Create README.md [32m(4 weeks ago) [1;34m<Udit Subramanya>[m
+* [31m9a64cb8[m -[33m (unformatted)[m Initial Commit [32m(4 weeks ago) [1;34m<Udit S>[mcommit 9315c6b984958d715713c711daea4727da379805
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 13:54:39 2020 -0400
+
+    remove pdf embedding
+
+commit 73f6cffcd1bc4d833ec3c0e55e738d09976fae29
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 13:54:09 2020 -0400
+
+    Embedded Objects are not allowed in GitHub readmes
+
+commit a7f38e92c97eb5c0bc618522a171ceae5e1f63fc
+Author: Udit Subramanya <udit610@yahoo.com>
+Date:   Tue Jun 30 04:04:26 2020 -0400
+
+    add pdf images
+
+commit 7fe178f9e2295c9d155adffa9d940763bf68bc42
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 03:37:01 2020 -0400
+
+    add sample pdf and viewer to readme
+
+commit d5b441f2890a7515bdcd21c4bf9251c26f307ef3
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 03:30:53 2020 -0400
+
+    extensive comments and added success msg
+
+commit 444304f5dd17600a28e3f136c35277cc3b3494e9
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 03:30:35 2020 -0400
+
+    formatting
+
+commit 90b3d23f3f1c6bf87872a2486395ab88e8ace686
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 02:28:46 2020 -0400
+
+    add mjr hdng for resources and objectives
+
+commit 643e05848c596297e446c41623355350619756a5
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 02:18:06 2020 -0400
+
+    rebuild project
+
+commit 214e4e7307974c7a052e2da8c6ca4e60dd0e1e22
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 02:17:15 2020 -0400
+
+    remove team PSU specifics
+
+commit 4a86daf99ad686e4ae29cb6febfc1f94393937c9
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 01:59:22 2020 -0400
+
+    fixed typos
+
+commit d4be4ad1d096d8ac5a0a594900d8c2ae80fe1960
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 01:57:17 2020 -0400
+
+    renamed project
+
+commit e6a6e024046cc1a6300c2098cb6895123057377a
+Author: Udit S <udit610@yahoo.com>
+Date:   Tue Jun 30 01:50:17 2020 -0400
+
+    Update project.pros
+
+commit 47a701413c141d7bdb0cd0a1fd87d2554d95d16c
+Author: Udit Subramanya <udit610@yahoo.com>
+Date:   Tue Jun 30 00:50:54 2020 -0400
+
+    emojis
+
+commit b0a5d10c37cd4dca24f3491cef96ad62f9459f7d
+Author: Udit Subramanya <udit610@yahoo.com>
+Date:   Tue Jun 30 00:48:35 2020 -0400
+
+    formatting checkboxes and line breaks
+
+commit ace6af7be2f23ec6a4eeba7c006f026feb963d98
+Author: Udit Subramanya <udit610@yahoo.com>
+Date:   Tue Jun 30 00:44:54 2020 -0400
+
+    fixed check boxes and explained contributions
+
+commit f47b47cd3c1b8ecedf451eefca5f4f5c7abe536d
+Author: Udit Subramanya <udit610@yahoo.com>
+Date:   Tue Jun 30 00:42:25 2020 -0400
+
+    content for major headings
+
+commit a465ef33b7ba2cc6dd519d1191ca013eab99e457
+Author: Udit Subramanya <udit610@yahoo.com>
+Date:   Mon Jun 29 23:45:28 2020 -0400
+
+    Added Major Headings
+
+commit 0f1743cfeadf582b40b0af7d9af09b2509887acd
+Author: Udit Subramanya <udit610@yahoo.com>
+Date:   Mon Jun 29 23:40:12 2020 -0400
+
+    Create README.md
+
+commit 9a64cb834c8e857c0dbde7757714a9e474a7ef68
+Author: Udit S <udit610@yahoo.com>
+Date:   Mon Jun 29 23:31:49 2020 -0400
+
+    Initial Commit
