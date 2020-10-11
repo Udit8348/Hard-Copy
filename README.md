@@ -9,7 +9,21 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 - Flexibility to work with a variety of code bases
 ## Practicality
 - Print your code!
-## Usage 
+
+## Setup
+Follow these steps to add this functionality to your project:
+- create a `scripts` directory in root of the project directory
+- copy the scripts/prosToMinted.py file into your `scripts` directory (all the dependencies should already be installed with python3)
+- modify `Makefile` to add the following code:
+```
+# Make File Rule for Converting Code to Tex
+SCRPTDIR=./scripts
+DOCSDIR = ./docs
+conv2tex: $(SCRPTDIR)/prosToMinted.py
+	python3 $(SCRPTDIR)/prosToMinted.py $(DOCSDIR)/Tex
+```
+
+## Usage
 - Run `prosv5 make conv2tex`
 - navigate to docs/Tex.zip
 - tex.zip should be uploaded to overleaf where it can easily be compiled into a pdf
@@ -44,5 +58,3 @@ Official PSU VEX-U Source Code\
 Vex Forum
 ### License
 Pending ⏳
-
-
