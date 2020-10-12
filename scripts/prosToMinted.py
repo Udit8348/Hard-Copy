@@ -16,7 +16,7 @@ def main(dest):
     except OSError as e:
         print(e)
 
-    # Create a 'Code' LaTeX file
+    # Create a 'Code.tex' LaTeX file
     # This is responsible for reading a copy of the valid files
     # then, formatting their contents
     with open("code.tex", "w+") as f:
@@ -76,16 +76,16 @@ def main(dest):
     # This is the container for the 'Code' LaTeX file
     # It contains document specific formatting and information
     with open("main.tex", "w+") as f:
-        f.write("\\documentclass{article}\n
-                 \\usepackage[utf8]{inputenc}\n
-                 \\usepackage[margin=1in]{geometry}\n
-                 \\title{PROJECT_TITLE}\n
-                 \\author{LAST_FIRST}\n
-                 \\date{MONTH_YEAR}\n
-                 \\usepackage{minted}\n
-                 \\begin{document}\n
-                 \\input{code.tex}\n\n
-                 \\end{document}")
+        f.write("\\documentclass{article}\n"
+                 + "\\usepackage[utf8]{inputenc}\n"
+                 + "\\usepackage[margin=1in]{geometry}\n"
+                 + "\\title{PROJECT_TITLE}\n"
+                 + "\\author{LAST_FIRST}\n"
+                 + "\\date{MONTH_YEAR}\n"
+                 + "\\usepackage{minted}\n"
+                 + "\\begin{document}\n"
+                 + "\\input{code.tex}\n\n"
+                 + "\\end{document}")
 
     # The 'Main' LaTeX file is completely written now
     # Save a copy of it to the destination and remove the original
