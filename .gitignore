@@ -14,3 +14,6 @@ temp.log
 temp.errors
 *.ini
 .d/
+
+# testing files
+scripts/winTest.py
