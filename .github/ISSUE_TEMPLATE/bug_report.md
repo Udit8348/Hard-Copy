@@ -26,4 +26,5 @@ A clear and concise description of what you expected to happen.
  - Version [e.g. 22]
 
 **Additional information**
-Add any other context about the problem here.
+Short Term Solution `🚧`:
+Long Term Solution `🛠`:
