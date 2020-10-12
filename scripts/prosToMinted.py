@@ -54,6 +54,7 @@ def main(dest):
 
             # Generate LaTeX code for any valid source file
             # Write it to the 'Code' LaTeX file
+            # See docs/minted.pdf for all the line break options
             f.write("\\subsection{" + source + "}\n")
             f.write("\\inputminted[linenos,tabsize=2,breaklines, breakanywhere]{c}{" + source + "}\n")
             f.write("\\pagebreak\n\n")
@@ -99,9 +100,10 @@ def main(dest):
     zipdir(dest, zipf)
     zipf.close()
 
-    # Delete the folder at the destination; a zip copy of it has been created
+    # Recursively delete tex folder once we have a zip copy of it in the destination folder
+    # https://linuxize.com/post/python-delete-files-and-directories/#:~:text=strerror
     try:
-        rmtree(dest) #removes folder and all contained items
+        rmtree(dest)
     except OSError as e:
         print("Error: %s : %s" % (dir_path, e.strerror))
 
