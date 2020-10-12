@@ -29,10 +29,10 @@ conv2tex: $(SCRPTDIR)/prosToMinted.py
 - tex.zip should be uploaded to overleaf where it can easily be compiled into a pdf
 
 ## Project Output
-![page1](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE-0.jpeg)
-![page2](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE%202-1.jpeg)
-![page3](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE%203-2.jpeg)
-![page4](https://github.com/Udit8348/Hard-Copy/blob/master/PROJECT_TITLE%204-3.jpeg)
+![page1](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg1.jpeg)
+![page2](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg2.jpeg)
+![page3](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg3.jpeg)
+![page4](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg4.jpeg)
 
 ## Compatibility
 Tested and working on PROS Kernel 3.2.1 and Okapi Lib 4.0.3 using python 3.7.7 on macOS 10.15.5
@@ -42,7 +42,6 @@ Tested and working on PROS Kernel 3.2.1 and Okapi Lib 4.0.3 using python 3.7.7 o
 - [ ] Display Git Information
 - [ ] Customize Margins to Fit in Notebooks
 - [ ] Specify Sections Snippets to Format
-
 
 ## Learn More Resources
 - https://www.gnu.org/software/make/manual/html_node/Introduction.html
