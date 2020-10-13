@@ -15,5 +15,5 @@ temp.errors
 *.ini
 .d/
 
-# testing files
+# Testing Files
 scripts/winTest.py
