@@ -105,7 +105,7 @@ def main(dest):
     try:
         rmtree(dest)
     except OSError as e:
-        print("Error: %s : %s" % (dir_path, e.strerror))
+        print(e)
 
     print(">>> Success! Find your zip at:", dest)
 
