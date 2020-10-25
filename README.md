@@ -6,7 +6,7 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 - Intelligent file selection
 - Recursive file searching
 - Cross Platform: Windows and *nix Support
-- Flexibile: works with a variety of code bases
+- Flexible: works with a variety of code bases
 - Colored code highlighting
 - Project name detection
 - Maintains clean project organization
