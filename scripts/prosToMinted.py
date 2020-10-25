@@ -100,7 +100,7 @@ def main():
             f.write("\\subsection{" + rel_src_path + "}\n")
             f.write("\\inputminted[linenos,tabsize=2,breaklines, breakanywhere]{c}{" + name + "}\n")
             f.write("\\pagebreak\n\n")
-    
+
     # Create the path to a main.tex file and insert boilerplate tex code
     main_dest = zip_source / "main.tex"
     main_dest.touch(exist_ok=True)
@@ -121,23 +121,24 @@ def main():
     '''
     # Create Path objects to the output zip and the temp folder containing all the assets
     zip_dest = docs_dest / "output.zip"
-    
+
 
     # create a ZipFile object with the provided parameters
     zipf = zipfile.ZipFile(str(zip_dest), mode='w', compression=zipfile.ZIP_DEFLATED)
-    
+
     # Function (defined above) recursively writes each file to the zip
-    zipdir(str(zip_source), zipf)
+    zip_source_truncated = Path('.') / 'output'
+    zipdir(str(zip_source_truncated), zipf)
     zipf.close()
 
     # Recursively delete output folder once we have zipped it
     try:
-        rmtree(str(zip_source))
+        rmtree(str(zip_source_truncated))
     except OSError as e:
         print(e)
 
-    print(">>> Success! Find your zip at: docs/output.zip")
-    print("You can upload this zipfile directly to overleaf")
+    print("\033[92m" + "Success! Find your zip at: docs/output.zip" + "\033[0m")
+    print("Upload the zip directly to overleaf and let it compile into a PDF!")
 
 
 if __name__ == "__main__":
