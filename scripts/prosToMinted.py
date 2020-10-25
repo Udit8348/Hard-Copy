@@ -1,8 +1,7 @@
-import os
-import sys
-import glob
+from pathlib import Path
 import zipfile
 from shutil import copy, rmtree
+import os
 
 # Function which zips the given 'path' to the 'ziph'
 def zipdir(path, ziph):
@@ -10,104 +9,136 @@ def zipdir(path, ziph):
         for file in files:
             ziph.write(os.path.join(root, file))
 
-def main(dest):
+# main function
+def main():
+    if Path('project.pros').exists():
+        print("\033[92m" + "FOUND PROJECT FILE " + u"\u2193" + "\033[0m")
+        root = Path('project.pros')
+        root_array = root.cwd().parts
+        PROJECT_NAME = root_array[-1]
+        ROOT_START = len(root_array)
+
     try:
-        os.mkdir(dest)
-    except OSError as e:
+        print(("\033[95m" + str(root) + " | " + str(type(root)) + "\033[0m"))
+    except:
+        print("Please navigate to the root directory of the PROS project")
+        return -1
+
+    try:
+        # create a temp directory to store all the tex files we want to print
+        zip_source = root.cwd()  / "output"
+        zip_source.mkdir(parents=True, exist_ok=True)
+    except FileExistsError as e:
         print(e)
 
-    # Create a 'Code.tex' LaTeX file
-    # This is responsible for reading a copy of the valid files
-    # then, formatting their contents
-    with open("code.tex", "w+") as f:
-        # Recursively search the entire project for any Header Files
-        f.write("%%-----------------------------------------\n")
+    try:
+        # create a permanent directory to store all the files we want to print
+        docs_dest = root.cwd()  / "docs"
+        docs_dest.mkdir(parents=True, exist_ok=True)
+    except FileExistsError as e:
+        # If the directory already exists, skip creating a new one
+        print("Docs directory already exists at: " + e)
+
+    # Create the path to a wrapper.tex file
+    wrapper_dest = zip_source / "wrapper.tex"
+    wrapper_dest.touch(exist_ok=True)
+    with wrapper_dest.open(mode='w') as f:
+        # Recursively search the entire project for any header files
+        f.write("%%---------------------\n")
         f.write("\\section{Header Files}\n\n")
-        for header in glob.glob('**/*.h*', recursive=True):
-            # Exclude PROS API headers
-            if ("api.h" in header) or ("/display/" in header) or ("/okapi/" in header) or ("/pros/" in header):
+        for header in root.cwd().glob('**/*.h*'):
+            # break header into components starting from the root
+            components = header.parts[ROOT_START:]
+
+            # Exclude PROS default headers
+            if('api.h' in components
+            or ('include' and 'pros') in components
+            or ('include' and 'okapi') in components
+            or ('include' and 'display') in components
+            or ('include' and 'output') in components):
                 continue
+
+            # Build a relative unix path for Overleaf to find the includes
+            rel_header_path = ""
+            for i in range(0, len(components)-1):
+                rel_header_path += components[i] + "/"
+            name = components[-1]
+            rel_header_path += name
+            copy(header, zip_source)
+
 
             # Generate LaTeX code for any valid header
             # Write it to the 'Code' LaTeX file
-            f.write("\\subsection{" + header + "}\n")
-            f.write("\\inputminted[linenos,tabsize=2,breaklines, breakanywhere]{c}{" + header + "}\n")
+            f.write("\\subsection{" + rel_header_path + "}\n")
+            f.write("\\inputminted[linenos,tabsize=2,breaklines, breakanywhere]{c}{" + name + "}\n")
             f.write("\\pagebreak\n\n")
 
-            # Copy the file's tree into the destination
-            head, tail = os.path.split(header)
-            path = dest + "/" + head
-            try:
-                os.mkdir(path)
-                print(path)
-            except OSError as e:
-                print(e)
-            copy(header, path)
-
-        # Recursively search the entire project for any Source Files
-        f.write("%%-----------------------------------------\n")
+        # Recursively search the entire project for any relevant source files
+        f.write("%%---------------------\n")
         f.write("\\section{Source Files}\n\n")
-        for source in glob.glob('**/*.c*', recursive=True):
-            # Exlude any object files or csv files
-            if ".o" in source or ".csv" in source:
+        for source in root.cwd().glob('**/*.c*'):
+            # break source into components starting from the root
+            components = source.parts[ROOT_START:]
+
+            '''
+                It is good practice to only have .c and .cpp files in src
+                PROS projects may contain .c image arrays or .csv files but
+                those should be organized outside of src directory
+            '''
+            if(not 'src' in components):
                 continue
 
+            # Build a relative unix path for Overleaf to find the source files
+            rel_src_path = ""
+            for i in range(0, len(components)-1):
+                rel_src_path += components[i] + "/"
+            name = components[-1]
+            rel_src_path += name
+            copy(source, zip_source)
+
             # Generate LaTeX code for any valid source file
-            # Write it to the 'Code' LaTeX file
-            # See docs/minted.pdf for all the line break options
-            f.write("\\subsection{" + source + "}\n")
-            f.write("\\inputminted[linenos,tabsize=2,breaklines, breakanywhere]{c}{" + source + "}\n")
+            f.write("\\subsection{" + rel_src_path + "}\n")
+            f.write("\\inputminted[linenos,tabsize=2,breaklines, breakanywhere]{c}{" + name + "}\n")
             f.write("\\pagebreak\n\n")
-
-            # Copy the file's tree into the destination
-            head, tail = os.path.split(source)
-            path = dest + "/" + head
-            try:
-                os.mkdir(path)
-            except OSError as e:
-                print(e)
-            copy(source, path)
-
-    # The 'Code' LaTeX file is completely written now
-    # Save a copy of it to the destination and remove the original
-    copy("code.tex", dest)
-    os.remove("code.tex")
-
-    # Create the 'Main' LaTeX file
-    # This is the container for the 'Code' LaTeX file
-    # It contains document specific formatting and information
-    with open("main.tex", "w+") as f:
+    
+    # Create the path to a main.tex file and insert boilerplate tex code
+    main_dest = zip_source / "main.tex"
+    main_dest.touch(exist_ok=True)
+    with main_dest.open("w") as f:
         f.write("\\documentclass{article}\n"
                  + "\\usepackage[utf8]{inputenc}\n"
                  + "\\usepackage[margin=1in]{geometry}\n"
-                 + "\\title{PROJECT_TITLE}\n"
+                 + "\\title{" + PROJECT_NAME + "}\n"
                  + "\\author{LAST_FIRST}\n"
                  + "\\date{MONTH_YEAR}\n"
                  + "\\usepackage{minted}\n"
-                 + "\\begin{document}\n"
-                 + "\\input{code.tex}\n\n"
+                 + "\\begin{document}\n\n"
+                 + "\\input{wrapper.tex}\n\n"
                  + "\\end{document}")
 
-    # The 'Main' LaTeX file is completely written now
-    # Save a copy of it to the destination and remove the original
-    copy("main.tex", dest)
-    os.remove("main.tex")
+    '''
+    Ultimately, create a zipfile which can be automatically read by Overleaf
+    '''
+    # Create Path objects to the output zip and the temp folder containing all the assets
+    zip_dest = docs_dest / "output.zip"
+    
 
-    # Zip the contents found at the destination
-    # A Zip file can be directly uploaded to overleaf
-    # @TODO might need to use regex to strip the name from the dest to create the path name for the zip
-    zipf = zipfile.ZipFile("docs/Tex.zip", 'w', zipfile.ZIP_DEFLATED)
-    zipdir(dest, zipf)
+    # create a ZipFile object with the provided parameters
+    zipf = zipfile.ZipFile(str(zip_dest), mode='w', compression=zipfile.ZIP_DEFLATED)
+    
+    # Function (defined above) recursively writes each file to the zip
+    zipdir(str(zip_source), zipf)
     zipf.close()
 
-    # Recursively delete tex folder once we have a zip copy of it in the destination folder
-    # https://linuxize.com/post/python-delete-files-and-directories/#:~:text=strerror
+    # Recursively delete output folder once we have zipped it
     try:
-        rmtree(dest)
+        rmtree(str(zip_source))
     except OSError as e:
         print(e)
 
-    print(">>> Success! Find your zip at:", dest)
+    print(">>> Success! Find your zip at: docs/output.zip")
+    print("You can upload this zipfile directly to overleaf")
+
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main()
