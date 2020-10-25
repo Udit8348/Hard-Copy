@@ -11,7 +11,7 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 - Project name detection
 - Maintains clean project organization
 - Endless custom formatting options using the Minted Tex Package
-## Practicality
+### Practicality
 Print your code on standard 8.5" x 11" paper with one simple command!
 
 ### Setup

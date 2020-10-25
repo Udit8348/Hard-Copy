@@ -5,7 +5,7 @@
         "target": "v5",
         "templates": {
             "kernel": {
-                "location": "/Users/imacudit/Library/Application Support/PROS/templates/kernel@3.2.1",
+                "location": "Library/Application Support/PROS/templates/kernel@3.2.1",
                 "metadata": {
                     "cold_addr": "58720256",
                     "cold_output": "bin/cold.package.bin",
@@ -151,7 +151,7 @@
                 "version": "3.2.1"
             },
             "okapilib": {
-                "location": "/Users/imacudit/Library/Application Support/PROS/templates/okapilib@4.0.3",
+                "location": "Library/Application Support/PROS/templates/okapilib@4.0.3",
                 "metadata": {
                     "origin": "pros-mainline"
                 },
@@ -287,6 +287,6 @@
                 "version": "4.0.3"
             }
         },
-        "upload_options": {"slot": 3}
+        "upload_options": {}
     }
 }
