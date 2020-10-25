@@ -73,6 +73,6 @@ Are you having issues getting setup? Do you have a suggestion for an improvement
 
 ### As Seen On
 Official PSU VEX-U Source Code\
-Vex Forum
+[Vex Forum](https://www.vexforum.com/t/release-hard-copy/85793)
 ### License
 Pending ⏳
