@@ -21,7 +21,8 @@ def main():
     try:
         print(("\033[95m" + str(root) + " | " + str(type(root)) + "\033[0m"))
     except:
-        print("Please navigate to the root directory of the PROS project")
+        print("\033[91m" + "Please navigate to the root directory of the PROS project" + "\033[0m")
+        print("\033[93m" + "Need help setting up? See: https://github.com/Udit8348/Hard-Copy#setup" + "\033[0m")
         return -1
 
     try:
@@ -144,7 +145,9 @@ def main():
 
     print("\033[92m" + "Success! Find your zip at: docs/output.zip" + "\033[0m")
     print("Upload the zip directly to overleaf and let it compile into a PDF!")
+    print("Need help troubleshooting? See: https://github.com/Udit8348/Hard-Copy#troubleshooting")
 
 
 if __name__ == "__main__":
+    # v 1.0
     main()

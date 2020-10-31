@@ -17,7 +17,7 @@ Print your code on standard 8.5" x 11" paper with one simple command!
 ## Setup
 Follow these steps to add this functionality to your project:
 - create a `scripts` directory in the root of your PROS project
-- add the [prosToMinted.py](https://github.com/Udit8348/Hard-Copy/blob/master/scripts/prosToMinted.py) file to your `scripts` directory (*All the dependencies are installed with python3!*)
+- add the [prosToMinted.py](https://github.com/Udit8348/Hard-Copy/blob/master/scripts/prosToMinted.py) file to your `scripts` directory (*All the dependencies come pre-installed with python3!*)
 
 ### Usage
 Open the terminal on your computer and navigate to the project's root directory\
@@ -42,12 +42,19 @@ As the final line of each output message reads, `output.zip` should be uploaded 
            <p>The script builds a temporary folder and adds all the relevant <code>.tex</code>, <code>*.c*</code> and <code>*.h*</code> files. Once all the file are added, the folder is zipped in the docs directory and the temp folder is deleted. The <code>*.c*</code> and <code>*.h*</code> just embedded as paths in the <code>.tex</code> files. When overleaf compiles the <code>.tex</code> files the actual formatting is done. Since you have access to all the files in the zip you can make any modifications or adjustments in Overleaf to meet your formatting requirements. If you want to make permanent changes to how the <code>.tex</code> files are built, you can edit the python script to reflect those changes. </p>
 </details>
 
+## Troubleshooting
 ### Why are some files missing?
 The script is designed to work with a wide variety of projects. However it is unrealistic to design it for *any* project structure. For that reason, it assumes your project follows two basic practices:
 1) keeping all your header (.h*) files in `include/`
 2) keeping all your source (.c*) files in `src/`
 
 Subdirectories within either of those folders will work as expected. For example, `include/my_lib/drive.h` or `src/my_lib/drive.cpp` will be found and formatted.
+
+### Change Log
+`v 0.2-beta -> v 1.0`:
+- only search for headers in `include/` to prevent pulling cached files from `.vscode/` or `cquery_cached_index/`
+- provide more useful output messages
+- organize readme and add troubleshooting section
 
 ## Results
 Here is the PDF generated from an example PROS project\
