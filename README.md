@@ -43,7 +43,7 @@ As the final line of each output message reads, `output.zip` should be uploaded 
 </details>
 
 ### Why are some files missing?
-The script is designed to work with a wide variety of projects. However it is unrealistic to design it so that it works with *any* project structure. For that reason, it assumes your project follows two basic practices:
+The script is designed to work with a wide variety of projects. However it is unrealistic to design it for *any* project structure. For that reason, it assumes your project follows two basic practices:
 1) keeping all your header (.h*) files in `include/`
 2) keeping all your source (.c*) files in `src/`
 

@@ -17,3 +17,6 @@ temp.errors
 
 # Testing Files
 scripts/winTest.py
+
+# macOS
+.DS_Store
