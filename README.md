@@ -2,7 +2,7 @@
 Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing Hard Copies of your code base for your Engineering Notebook.
 
 
-### Features
+## Features
 - Intelligent file selection
 - Recursive file searching
 - Cross Platform: Windows and *nix Support
@@ -14,7 +14,7 @@ Convert your PROS Source Code into a Syntax Highlighted PDF! Great for Printing 
 ### Practicality
 Print your code on standard 8.5" x 11" paper with one simple command!
 
-### Setup
+## Setup
 Follow these steps to add this functionality to your project:
 - create a `scripts` directory in the root of your PROS project
 - add the [prosToMinted.py](https://github.com/Udit8348/Hard-Copy/blob/master/scripts/prosToMinted.py) file to your `scripts` directory (*All the dependencies are installed with python3!*)
@@ -42,7 +42,14 @@ As the final line of each output message reads, `output.zip` should be uploaded 
            <p>The script builds a temporary folder and adds all the relevant <code>.tex</code>, <code>*.c*</code> and <code>*.h*</code> files. Once all the file are added, the folder is zipped in the docs directory and the temp folder is deleted. The <code>*.c*</code> and <code>*.h*</code> just embedded as paths in the <code>.tex</code> files. When overleaf compiles the <code>.tex</code> files the actual formatting is done. Since you have access to all the files in the zip you can make any modifications or adjustments in Overleaf to meet your formatting requirements. If you want to make permanent changes to how the <code>.tex</code> files are built, you can edit the python script to reflect those changes. </p>
 </details>
 
-### Results
+### Why are some files missing?
+The script is designed to work with a wide variety of projects. However it is unrealistic to design it so that it works with *any* project structure. For that reason, it assumes your project follows two basic practices:
+1) keeping all your header (.h*) files in `include/`
+2) keeping all your source (.c*) files in `src/`
+
+Subdirectories within either of those folders will work as expected. For example, `include/my_lib/drive.h` or `src/my_lib/drive.cpp` will be found and formatted.
+
+## Results
 Here is the PDF generated from an example PROS project\
 ![page1](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg1.jpeg)
 ![page2](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg2.jpeg)
