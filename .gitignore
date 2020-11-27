@@ -14,9 +14,3 @@ temp.log
 temp.errors
 *.ini
 .d/
-
-# Testing Files
-scripts/winTest.py
-
-# macOS
-.DS_Store
