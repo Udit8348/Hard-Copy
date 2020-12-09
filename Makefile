@@ -1,12 +1,5 @@
 ################################################################################
 ######################### User configurable parameters #########################
-
-# Make File Rule for Converting Code to Tex
-SCRPTDIR=./scripts
-DOCSDIR = ./docs
-conv2tex: $(SCRPTDIR)/prosToMinted.py
-	python3 $(SCRPTDIR)/prosToMinted.py $(DOCSDIR)/Tex
-
 # filename extensions
 CEXTS:=c
 ASMEXTS:=s S
