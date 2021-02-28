@@ -57,11 +57,11 @@ Subdirectories within either of those folders will work as expected. For example
 - organize readme and add troubleshooting section
 
 ## Results
-Here is the PDF generated from an example PROS project\
-![page1](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg1.jpeg)
-![page2](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg2.jpeg)
-![page3](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg3.jpeg)
-![page4](https://github.com/Udit8348/Hard-Copy/blob/master/docs/assets/pg4.jpeg)
+Here is the [PDF](docs/assets/Hard_Copy.pdf) generated from this PROS project\
+![page1](docs/assets/pg1.png)
+![page2](docs/assets/pg2.png)
+![page3](docs/assets/pg3.png)
+![page4](docs/assets/pg4.png)
 
 ### Compatibility
 Tested and working on: `Python 3.8.6 on macOS 10.15.7` & `Python 3.7.0 on Windows 10`
@@ -88,5 +88,6 @@ Are you having issues getting setup? Do you have a suggestion for an improvement
 ### As Seen On
 Official PSU VEX-U Source Code\
 [Vex Forum](https://www.vexforum.com/t/release-hard-copy/85793)
+
 ### License
-Pending ⏳
+MIT License
